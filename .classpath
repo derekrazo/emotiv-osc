@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Applications/EmotivResearch/docs/Examples/Java/lib/jna.jar"/>
+	<classpathentry kind="lib" path="/Users/derekrazo/Desktop/Dev/Java-Libraries/SizeOf_src_0_2_1.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

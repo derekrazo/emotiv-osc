@@ -47,7 +47,7 @@ public class OSCBundle extends OSCPacket {
 	public static final Date TIMESTAMP_IMMEDIATE = new Date(0);
 
 	private Date timestamp;
-	private List<OSCPacket> packets;
+	public List<OSCPacket> packets;
 
 	/**
 	 * Create a new empty OSCBundle with a timestamp of immediately.
