@@ -11,7 +11,6 @@ import java.util.Random;
 import osc.OSCBundle;
 import osc.OSCPortIn;
 import osc.OSCPortOut;
-import sun.jkernel.Bundle;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
@@ -180,6 +179,7 @@ public class EmotivOscSend implements Runnable{
 			
 			frustration = new osc.OSCMessage("/eeg/frustration");
 			frustration.addArgument(EmoState.INSTANCE.ES_AffectivGetFrustrationScore(eState));
+			System.out.println(EmoState.INSTANCE.ES_AffectivGetFrustrationScore(eState));
 			
 			meditation = new osc.OSCMessage("/eeg/meditation");
 			meditation.addArgument(EmoState.INSTANCE.ES_AffectivGetMeditationScore(eState));
