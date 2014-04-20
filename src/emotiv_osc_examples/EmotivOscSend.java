@@ -179,7 +179,7 @@ public class EmotivOscSend implements Runnable{
 			
 			frustration = new osc.OSCMessage("/eeg/frustration");
 			frustration.addArgument(EmoState.INSTANCE.ES_AffectivGetFrustrationScore(eState));
-			System.out.println(EmoState.INSTANCE.ES_AffectivGetFrustrationScore(eState));
+			//System.out.println(EmoState.INSTANCE.ES_AffectivGetFrustrationScore(eState));
 			
 			meditation = new osc.OSCMessage("/eeg/meditation");
 			meditation.addArgument(EmoState.INSTANCE.ES_AffectivGetMeditationScore(eState));
@@ -187,6 +187,8 @@ public class EmotivOscSend implements Runnable{
 			current_action = new osc.OSCMessage("/eeg/action");
 			current_action.addArgument(EmoState.INSTANCE.ES_CognitivGetCurrentAction(eState));
 			
+			current_action = new osc.OSCMessage("/eeg/action");
+			current_action.addArgument(EmoState.INSTANCE.ES_CognitivGetCurrentAction(eState));
 			
 			//System.out.println(timestamp + " : New EmoState from user " + userID.getValue());
 			
@@ -283,7 +285,8 @@ public class EmotivOscSend implements Runnable{
 								
 								Edk.INSTANCE.EE_DataGet(hData,i,data,nSamplesTaken.getValue());
 																
-								data2d[i][index] = data[sampleIdx] ;									
+								data2d[i][index] = data[sampleIdx] ;	
+				
 								
 							}	
 														
