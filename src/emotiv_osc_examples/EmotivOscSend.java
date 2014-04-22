@@ -162,7 +162,7 @@ public class EmotivOscSend implements Runnable{
 		Edk.INSTANCE.EE_EmoEngineEventGetUserId(eEvent, userID);
 
 		// Package into OSC the EmoState if it has been updated
-		if (eventType == Edk.EE_Event_t.EE_EmoStateUpdated.ToInt()) {
+		if (eventType == Edk.EE_Event_t.EE_EmoStateUpdated.ToInt() || eventType == EE_Event_t.EE_UnknownEvent.ToInt()) {
 
 			Edk.INSTANCE.EE_EmoEngineEventGetEmoState(eEvent, eState);
 			
@@ -183,9 +183,6 @@ public class EmotivOscSend implements Runnable{
 			
 			meditation = new osc.OSCMessage("/eeg/meditation");
 			meditation.addArgument(EmoState.INSTANCE.ES_AffectivGetMeditationScore(eState));
-			
-			current_action = new osc.OSCMessage("/eeg/action");
-			current_action.addArgument(EmoState.INSTANCE.ES_CognitivGetCurrentAction(eState));
 			
 			current_action = new osc.OSCMessage("/eeg/action");
 			current_action.addArgument(EmoState.INSTANCE.ES_CognitivGetCurrentAction(eState));
